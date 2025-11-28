@@ -12,6 +12,8 @@
     --muted: #e8e6e5;
     --muted-tint: #f8f6f5;
     --muted-shade: #d8d6d5;
+    --shadow-dark: 0 0.1rem 0.2rem o.1rem #2d282333;
+    --shadow-light:0 0.1 rem 0.2rem 0.1rem #e1e1e18c;
     
     --font-normal: Robot, Ariel, sans-serif;
     --font-heading: 'Noto Serif', serif;
@@ -93,8 +95,11 @@ p{
 .text-light {color: var(--light);}
 .text-muted {color:var(--muted);}
 
+
 /****************************** COMPONENTS **********************/
 .product-image img {
+    position: relative;
+    /*this tells all children that this is a parant*/
     aspect-ratio: 16 / 9;
     width: 100%;
 
@@ -102,8 +107,44 @@ p{
     border: 4px solid var(--light);
     border-radius: var(--space-2);
 }
+.product-image .product-tag {
+    background-color: var(--dark);
+    color: var(--light);
+box-shadow: var(--shadow-light);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--space-3);
 
+    position: absolute;
+    left: var(--space-2);
+    top: var(--space-2);
+}
+
+.tags {
+    display: flex;
+    list-style: none;
+    gap: var(--space-1);
+}
+    .tags .tag-item {
+        background-color: var(--primary);
+        color: var(--light);
+
+        text-decoration: none;
+
+        padding: var(--space-1) var(--space-2);
+        border-radius: var(--space-3);
+
+    }
 /****************************** LAYOUT **********************/
+.container{
+    max-width: 1280px;
+    margin: var(--space-2) auto;
+}
+
+.container section{
+    box-shadow: var(--shadow-dark);
+    padding: var(--space-2);
+    margin-top: var(--space-2);
+}
 .d-flex { display: flex; }
 .d-grid { display: grid; }
 .flex-between { justify-content: space-between; }
@@ -137,10 +178,11 @@ p{
 }
 
 .swatch .swatch-value {
-    
+    display: flex;
     border-radius: 100%;
     aspect-ratio:1 / 1;
     width: 3rem; /* Root font size: 16pc */
+    box-shadow: var(--shadow-dark);
     
     box-shadow: 0 0.1rem 0.2rem 0.1rem rgba(45, 40, 35, 0.2)
 }
