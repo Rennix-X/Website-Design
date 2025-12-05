@@ -97,8 +97,11 @@ p{
 
 
 /****************************** COMPONENTS **********************/
-.product-image img {
+.product-image {
     position: relative;
+}
+
+.product-image img {
     /*this tells all children that this is a parant*/
     aspect-ratio: 16 / 9;
     width: 100%;
