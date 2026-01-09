@@ -242,3 +242,40 @@ box-shadow: var(--shadow-light);
     overflow: clip;
     text-overflow: ellipsis;
 }
+
+/****************************** CONTACT **********************/
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    appearance: none;
+
+    font-family: var(--muted);
+    font-size: 1em;
+
+    border-color: var(--muted);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+
+    display: block;
+    width: 100%;
+    padding: var(--space-1);
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+/****************************** MOBILE **********************/
+@media (max-width: 600px){
+
+    .sm-grid-1col {
+        grid-template-columns: 1fr;
+    }
+
+    .sm-grid-2col {
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+}
